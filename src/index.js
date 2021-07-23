@@ -13,7 +13,7 @@ const transform = (parser, customTransform) => {
         const { options } = parser;
         const content = fs.readFileSync(file.path, enc);
         const extname = path.extname(file.path);
-        
+
         if (typeof customTransform === 'function') {
             this.parser = parser;
             customTransform.call(this, file, enc, done);
